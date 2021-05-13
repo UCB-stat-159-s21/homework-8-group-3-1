@@ -56,6 +56,13 @@ def test_N_generator_badinput_1():
     
     Checks for invalid number of subjects"""
     pytest.raises(ValueError, N_generator, 5, 10, 10, 5, 5)
+
+def test_N_generator_badinput_1_fixed():
+    """N generator test
+    
+    Checks for invalid number of subjects"""
+    with pytest.raises(ValueError):
+        Nt, N00, N01, N10, N11 = N_generator(5, 10, 10, 5, 5)
     
 def test_N_generator_badinput_2():
     """N generator test
@@ -63,14 +70,25 @@ def test_N_generator_badinput_2():
     Checks for negative subjects"""
     pytest.raises(ValueError, N_generator, -5, 10, 10, 5, 5)
     
+def test_N_generator_badinput_2_fixed():
+    """N generator test
     
+    Checks for negative subjects"""
+    with pytest.raises(ValueError):
+        Nt, N00, N01, N10, N11 = N_generator(-5, 10, 10, 5, 5)
     
 def test_filterTable_badinput_2():
     """filterTable test
     
     Checks for negative subjects"""
     pytest.raises(ValueError, filterTable, -5, 10, 10, 5, 5)
+
+def test_filterTable_badinput_2_fixed():
+    """N generator test
     
+    Checks for negative subjects"""
+    with pytest.raises(ValueError):
+        Nt, N00, N01, N10, N11 = filterTable(-5, 10, 10, 5, 5)
     
 def test_tau_twosided_ci_badinput_1():
     """tau_twosided_ci test
