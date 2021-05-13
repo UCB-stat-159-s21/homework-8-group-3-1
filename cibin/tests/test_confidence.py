@@ -1,4 +1,4 @@
-from confidence import *
+from cibin import *
 
 
 
