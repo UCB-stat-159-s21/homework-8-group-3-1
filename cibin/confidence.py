@@ -175,10 +175,6 @@ def filterTable(Nt, n00, n01, n10, n11):
         True if table is consistent with the data
     '''
     
-    if sum(Nt) < (n00 + n01 + n10 + n11):
-        raise ValueError("Number of subjects do not match!")
-    if (n11 < 0) or (n10 < 0) or (n01 < 0) or (n00 < 0):
-        raise ValueError("subject count cannot be negative!")
     N = np.sum(Nt)   # total subjects
     return max(0, n11-Nt[1], Nt[3]-n01, Nt[2]+Nt[3]-n10-n01) <= \
         min(Nt[3], n11, Nt[2]+Nt[3]-n01, N-Nt[1]-n01-n10)
